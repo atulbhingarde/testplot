@@ -12,12 +12,15 @@ var apiKey = "YndWi3WEDL-sXiAVZSWT";
  * index 4 - Close
  * index 5 - Volume
  */
+ 
+ var inputField1 = d3.select("#datepicker1");
+ var inputField2 = d3.select("#datepicker2");
 function unpack(rows, index) {
   return rows.map(function(row) {
     return row[index];
   });
 }
-
+var Button = d3.select("#filter-btn");
 function getMonthlyData() {
 
   var queryUrl = `https://www.quandl.com/api/v3/datasets/WIKI/AMZN.json?start_date=2016-10-01&end_date=2017-10-01&collapse=monthly&api_key=${apiKey}`;
@@ -105,5 +108,15 @@ function buildPlot() {
 
   });
 }
+Button.on("click", () => {
+  tbody.html("");
+  populate(data);
+  console.log("Table reset");
+  console.log(inputField1);
+  var inputField1 = $("#datepicker1").datepicker('getDate');
+  $.datepicker.formatDate('dd-mm-yy', inputField1);
 
+  // console.log(inputField1);
+  // console.log(inputField2);
+});
 buildPlot();
