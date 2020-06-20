@@ -35,6 +35,12 @@ tbody>tr:nth-child(odd){background-color: #fff !important}
   </style>
   
   <script>
+  
+/* function myFunction() {
+  var x = document.getElementById("pass").value;
+  document.getElementById("demo").innerHTML = x;
+} */
+
   $( function() {
     $( "#datepicker1" ).datepicker({dateFormat: "dd/mm/yy"});
   } );
@@ -63,18 +69,20 @@ tbody>tr:nth-child(odd){background-color: #fff !important}
     </div>
 
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-2">
         <div class="panel panel-primary">
           <div class="panel-body">
             Company Profile
           </div>
           <li class="filter list-group-item" style="background-color: gray;">
+            <label for="pass">your keys from quandl </label>
+               <input class=form-control type="text" id="pass" name="password" minlength="8" required value="YndWi3WEDL-sXiAVZSWT">  
             <label for="date">Enter A Symbol</label>
-              <input class=form-control type="text" id="symbol" >
+              <input class=form-control type="text" id="symbol" value="aapl">
             <label for="date">Enter a Date</label>
-              <input class=form-control type="text" id="datepicker1" >
+              <input class=form-control type="text" id="datepicker1"  value="01/02/2010">
             <label for="date">Enter a Date</label>
-              <input class=form-control type="text" id="datepicker2" >
+              <input class=form-control type="text" id="datepicker2" value="02/02/2010">
 		        <button id="filter-btn" type="submit" class="btn btn-default btn-lg btn-block" >Filter Table</button>
           </li>
         </div>
@@ -93,7 +101,7 @@ tbody>tr:nth-child(odd){background-color: #fff !important}
           Twitch.tv Whole Foods Market Woot Zappos Website amazon.com
         </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-10">
         <div class="panel panel-default">
           <div class="panel-body">
             Stock Performance
