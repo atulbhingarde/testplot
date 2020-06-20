@@ -65,7 +65,7 @@ function buildTable(dates, openPrices, highPrices, lowPrices, closingPrices, vol
 
 function buildPlot(Symbol, StartDate, EndDate, mykeyA) {
   var url = `https://www.quandl.com/api/v3/datasets/WIKI/${Symbol}.json?start_date=${StartDate}&end_date=${EndDate}&api_key=${mykeyA}`;
-  // console.log(url);
+  //console.log(url);
   d3.json(url).then(function(data) {
 
     // Grab values from the response json object to build the plots
@@ -87,6 +87,7 @@ function buildPlot(Symbol, StartDate, EndDate, mykeyA) {
       name: name,
       x: dates,
       y: closingPrices,
+      linewidth: 1,
       line: {
         color: "#17BECF"
       }
@@ -108,24 +109,31 @@ function buildPlot(Symbol, StartDate, EndDate, mykeyA) {
       title: `${stock} closing prices`,
       xaxis: {
         // linecolor: ,
-        linewidth: 2,
+        linewidth: 1,
         range: [startDate, endDate],
         type: "date",
         mirror: true,
       },
       yaxis: {
-        linewidth: 2,
+        linewidth: 1,
         autorange: true,
         type: "linear",
         mirror: true,
       },
       showlegend: true,
       showline: true,
-      autosize: true,
-      
+      // autosize: true,
+      // height: 500,
+      width: 1000,
+      height: 600,
+      legend: {
+        x: 0.01,
+        y: 1.17,
+      }
     };
 
-    Plotly.newPlot("plot", data, layout, height=500);
+    Plotly.newPlot("plot", data, layout);
+    
   //   plot.update_layout(
   //     autosize=true,
   //     width=500,
