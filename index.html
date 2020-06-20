@@ -38,15 +38,16 @@ tbody>tr:nth-child(odd){background-color: #fff !important}
   $( function() {
     $( "#datepicker1" ).datepicker({dateFormat: "dd/mm/yy"});
   } );
+  // var inputField1 = $("#datepicker1").datepicker("option", "dd/mm/yy");
   var inputField1 = $("#datepicker1").datepicker("option", "dd/mm/yy");
   $.datepicker.formatDate(inputField1);
-  console.log(inputField1);
+  // console.log(inputField1);
  $( function() {
     $( "#datepicker2" ).datepicker({dateFormat: "dd/mm/yy"});
   } );
   var inputField2 = $("#datepicker2").datepicker("option", "dd/mm/yy");
   $.datepicker.formatDate(inputField2);
-  console.log(inputField2);
+  // console.log(inputField2);
 
   </script>
 </head>
@@ -67,7 +68,9 @@ tbody>tr:nth-child(odd){background-color: #fff !important}
           <div class="panel-body">
             Company Profile
           </div>
-		      <li class="filter list-group-item" style="background-color: gray;">
+          <li class="filter list-group-item" style="background-color: gray;">
+            <label for="date">Enter A Symbol</label>
+              <input class=form-control type="text" id="symbol" >
             <label for="date">Enter a Date</label>
               <input class=form-control type="text" id="datepicker1" >
             <label for="date">Enter a Date</label>
